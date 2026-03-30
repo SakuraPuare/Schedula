@@ -1,0 +1,14 @@
+fastapi
+pydantic
+pydantic-settings
+PyJWT
+SQLAlchemy
+uvicorn
+PyMySQL
+python-multipart
+aiohttp
+sse_starlette
+grpcio
+protobuf
+numpy
+pandas

@@ -1,0 +1,42 @@
+.content-container {
+  padding: 40px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card {
+  flex: 1;
+  margin: 0 8px;
+}
+
+.system-delay-card {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.time-picker {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.delay-status {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.green-status {
+  color: green;
+}
+
+.red-status {
+  color: red;
+}

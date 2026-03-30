@@ -1,0 +1,9 @@
+frontend/node_modules/
+frontend/nginx/logs/
+frontend/nginx/html/assets/
+
+backend/__pycache__/
+backend/runtime/
+backend/sql/data/
+
+.DS_Store

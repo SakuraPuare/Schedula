@@ -1,0 +1,65 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/bg.png");
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  height: 91vh;
+
+  .user-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(1px);
+    width: 50vh;
+    padding: 20px;
+    border-radius: 20px;
+    transition: 0.2s;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    .title {
+      color: #000;
+      margin-bottom: 0px;
+    }
+
+    .item {
+      width: 200px;
+    }
+
+    .divide {
+      border: none;
+      height: 1px;
+      background-color: #ddd;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .details {
+      width: 100%;
+    }
+
+
+    .button {
+      background-color: #007bff;
+      color: #fff;
+      width: 100%;
+      height: 40px;
+      margin-top: 10px;
+      size: 10px;
+      &:hover {
+        background-color: #81addd;
+      }
+    }
+  }
+
+  .user-box:hover {
+    transition: 0.2s;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.3);
+  }
+}

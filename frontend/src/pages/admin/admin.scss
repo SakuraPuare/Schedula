@@ -1,0 +1,22 @@
+.ant-layout-sider-trigger {
+    background-color: #fff !important;
+    color: #000 !important; 
+    border-top: 1px solid #f0f0f0; 
+  }
+  
+.admin-layout {
+    min-height: 91vh;
+
+    .protable {
+        height: 84vh;
+    }
+
+    .admin-sider {
+        background-color: #fff;
+      }
+      
+    .admin-content {
+        margin: 16px;
+    }
+      
+}

@@ -1,0 +1,66 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8.0.21
+    container_name: schedula-mysql
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-change_me_root_password}
+      MYSQL_DATABASE: database_exp
+      MYSQL_USER: ${MYSQL_APP_USER:-app_user}
+      MYSQL_PASSWORD: ${MYSQL_APP_PASSWORD:-change_me_app_password}
+    ports:
+      - "3307:3306"
+    volumes:
+      - "./backend/sql/data/:/var/lib/mysql/"
+      - "./backend/sql/conf/:/etc/mysql/conf.d/"
+      - "./backend/sql/init/:/docker-entrypoint-initdb.d/"
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_general_ci
+      - --explicit_defaults_for_timestamp=true
+      - --lower_case_table_names=1
+    networks:
+      - schedula
+
+  scheduler:
+    build: ./backend/scheduler
+    container_name: schedula-scheduler
+    ports:
+      - "50051:50051"
+    networks:
+      - schedula
+
+  backend:
+    build: ./backend
+    container_name: schedula-backend
+    env_file:
+      - ./backend/docker.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+      - scheduler
+    networks:
+      - schedula
+
+  frontend:
+    image: nginx
+    container_name: schedula-frontend
+    ports:
+      - "81:80"
+    volumes:
+      - "./frontend/nginx/nginx.conf:/etc/nginx/nginx.conf"
+      - "./frontend/nginx/logs:/var/log/nginx"
+      - "./frontend/nginx/html:/usr/share/nginx/html"
+    restart: always
+    depends_on:
+      - backend
+    networks:
+      - schedula
+
+networks:
+  schedula:
