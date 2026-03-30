@@ -1,3 +1,8 @@
+/**
+ * Feature F25 - Teacher grade submission console.
+ * Design intent: bind teacher-owned classes to student grade forms so grade entry follows
+ * the same ownership and time-window constraints enforced by the backend.
+ */
 import React, { useState, useEffect } from 'react';
 import { message, Button, InputNumber, Form } from 'antd';
 import { ProCard, ProTable } from '@ant-design/pro-components';

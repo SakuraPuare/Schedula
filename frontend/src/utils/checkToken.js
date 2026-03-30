@@ -1,3 +1,8 @@
+/**
+ * Feature F18 - Client-side token lifecycle guard.
+ * Design intent: keep route protection and token invalidation deterministic before any
+ * business page starts issuing privileged requests.
+ */
 import axios from "axios";
 import { service } from "@/service";
 

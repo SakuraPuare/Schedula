@@ -1,3 +1,8 @@
+/**
+ * Feature F21 - Teacher workbench.
+ * Design intent: group scheduling, timetable viewing, and grade submission into one
+ * role-specific workspace that matches the teacher workflow.
+ */
 import React, { useState } from 'react';
 import { Layout } from 'antd';
 import TeacherSider from '@/components/teacher/sider';

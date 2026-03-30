@@ -1,3 +1,9 @@
+"""
+Feature F00 - System bootstrap and runtime assembly.
+Design intent: centralize service composition, exception handling, and router registration so
+all business modules share one startup path and one response contract. This module is the
+runtime entry for the backend architecture described in the documentation.
+"""
 from __future__ import annotations
 
 import logging

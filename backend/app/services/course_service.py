@@ -1,3 +1,9 @@
+"""
+Feature F10 - Course lifecycle orchestration.
+Design intent: own the core teaching-management workflows, including course browsing,
+enrollment, timetable generation, grading, and intelligent scheduling. This is the main
+self-developed business service referenced throughout the documentation.
+"""
 from __future__ import annotations
 
 from datetime import datetime, timedelta
@@ -217,6 +223,7 @@ class CourseService:
         if course is None:
             raise NotFoundError("Class Not Found")
 
+        # Build occupancy matrices before RPC so the optimizer receives explicit conflict data.
         student_schedule_matrix, student_ids = self._repository.get_student_schedule_matrix(
             class_id, start_date, end_date
         )
@@ -229,6 +236,7 @@ class CourseService:
         if day_num <= 0:
             raise AppError("时间范围至少需要覆盖一天")
 
+        # Delegate the optimization search to the isolated scheduler service.
         result = run_opt_client(
             self._settings.schedule_address,
             day_num,
@@ -276,6 +284,7 @@ class CourseService:
             raise AppError("排课结果无有效教室", status_code=500)
         classroom_id = classroom_ids[int(classroom_indices[0][0])]
 
+        # Reconstruct the conflict student set from the chosen time slot for report generation.
         conflict_vector = np.sum(
             student_schedule_matrix * selected_slot.reshape(-1, 5), axis=(1, 2)
         )

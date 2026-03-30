@@ -1,3 +1,8 @@
+"""
+Feature F02 - Authentication primitives.
+Design intent: keep password hashing and JWT creation/verification in one module so login,
+email verification, and role-based access all rely on the same cryptographic policy.
+"""
 from __future__ import annotations
 
 import hashlib

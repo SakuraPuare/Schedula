@@ -1,3 +1,8 @@
+"""
+Feature F13 - Course data aggregation and persistence.
+Design intent: centralize cross-table reads/writes for plans, classes, schedules, grades, and
+selection history so the service layer can focus on workflow policy.
+"""
 from __future__ import annotations
 
 import json

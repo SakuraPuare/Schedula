@@ -1,3 +1,8 @@
+/**
+ * Feature F20 - Student course workspace.
+ * Design intent: aggregate student-side course planning, history, timetable, and grade
+ * functions under a single navigation context.
+ */
 import React, { useState } from 'react';
 import { Layout } from 'antd';
 import CourseSider from '@/components/course/sider';

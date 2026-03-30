@@ -1,3 +1,8 @@
+/**
+ * Feature F24 - Intelligent scheduling console.
+ * Design intent: make the self-developed scheduling engine observable to teachers through
+ * class selection, candidate classrooms, preference input, and report viewing.
+ */
 import React, { useState, useEffect } from 'react';
 import { Table, Button, Modal, Form, Input, List, Card, DatePicker, Select, Switch, message } from 'antd';
 import './schedule.scss';

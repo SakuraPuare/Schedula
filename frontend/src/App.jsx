@@ -1,3 +1,8 @@
+/**
+ * Feature F16 - Frontend application shell.
+ * Design intent: hold global navigation, authentication pre-check, and shared layout so
+ * every page participates in one coherent runtime container.
+ */
 import React, { useEffect } from 'react';
 import Layout, { Content, Header } from 'antd/es/layout/layout';
 import Navbar from './components/navbar';

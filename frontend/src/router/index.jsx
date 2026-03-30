@@ -1,3 +1,8 @@
+/**
+ * Feature F17 - Role-aware route dispatch.
+ * Design intent: expose only the page groups that belong to the current role, mirroring
+ * the backend permission model documented for the software.
+ */
 import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Login from '@/pages/login';

@@ -1,3 +1,8 @@
+"""
+Feature F01 - Request dependency injection and role gating.
+Design intent: turn database session management, token decoding, and role checks into
+reusable dependencies so every protected interface follows the same security path.
+"""
 from __future__ import annotations
 
 from typing import Annotated, Callable, Optional

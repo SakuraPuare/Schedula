@@ -1,3 +1,8 @@
+"""
+Feature F03 - Time-window governance.
+Design intent: persist the business opening windows for enrollment, scheduling, and grading
+outside transient process memory, so administrative controls remain effective after restart.
+"""
 from __future__ import annotations
 
 import json

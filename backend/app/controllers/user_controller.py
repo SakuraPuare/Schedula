@@ -1,3 +1,8 @@
+"""
+Feature F04 - User-facing API controller set.
+Design intent: expose authentication, profile, feedback, and verification capabilities through
+role-aware HTTP endpoints that map directly to the functions described in the specification.
+"""
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends

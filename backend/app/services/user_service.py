@@ -1,3 +1,8 @@
+"""
+Feature F07 - Authentication and account lifecycle orchestration.
+Design intent: implement the full user lifecycle in one service, including login, registration,
+verification mail re-sending, token inspection, and feedback submission.
+"""
 from __future__ import annotations
 
 from app.core.exceptions import AppError, NotFoundError, UnauthorizedError

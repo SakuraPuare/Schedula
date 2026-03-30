@@ -1,3 +1,8 @@
+"""
+Feature F15 - Scheduling RPC bridge.
+Design intent: turn the optimization service into a callable backend component with a stable
+request/response contract for scheduling orchestration.
+"""
 import grpc
 import numpy as np
 import utils.opt_client.opt_pb2 as opt_pb2

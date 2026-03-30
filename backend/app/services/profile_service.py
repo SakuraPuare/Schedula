@@ -1,3 +1,8 @@
+"""
+Feature F08 - Teacher/student profile maintenance.
+Design intent: consolidate profile read/write rules so field validation and partial-update logic
+stay aligned with the user-facing forms and the software specification.
+"""
 from __future__ import annotations
 
 from app.core.exceptions import AppError, NotFoundError

@@ -1,3 +1,8 @@
+"""
+Feature F09 - Administrative time-window service.
+Design intent: provide a small, explicit service for business phase control so administrators can
+open and close enrollment, scheduling, and grading without editing source code.
+"""
 from __future__ import annotations
 
 from datetime import datetime

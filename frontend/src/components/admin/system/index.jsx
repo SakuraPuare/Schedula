@@ -1,3 +1,8 @@
+/**
+ * Feature F26 - Runtime window control console.
+ * Design intent: expose enrollment, scheduling, and grading phase control as concrete UI
+ * actions backed by administrator APIs and observable timestamps.
+ */
 import { service } from '@/service';
 import React, { useState, useEffect } from 'react';
 import { Layout, Button, Typography, Card, Modal, DatePicker, message, Spin } from 'antd';

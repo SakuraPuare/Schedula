@@ -1,3 +1,8 @@
+/**
+ * Feature F22 - Administrator console.
+ * Design intent: expose system-time governance as an isolated management workspace rather
+ * than mixing control functions into teaching pages.
+ */
 import React, { useState } from 'react';
 import { Layout } from 'antd';
 import AdminSider from '@/components/admin/sider';

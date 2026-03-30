@@ -1,3 +1,8 @@
+"""
+Feature F14 - Scheduling optimization engine.
+Design intent: execute the self-developed linear programming model that balances teacher time
+preferences, student conflict rate, and classroom exclusivity.
+"""
 import grpc
 from concurrent import futures
 import numpy as np
@@ -36,12 +41,14 @@ class ScheduleOptimizationService(opt_pb2_grpc.ScheduleOptimizationServicer):
 
         z = pulp.LpVariable.dicts("z", (j for j in range(J)), lowBound=0, cat="Continuous")
 
+        # Preference objective rewards time slots preferred by the teacher.
         objective_pref = (
             pulp.lpSum(
                 pref_matrix[i, j] * x[i, j] for i in range(M) for j in range(N)
             ) / (M * N)
         )
 
+        # Conflict objective penalizes time slots that collide with enrolled students.
         objective_w_i = (
             pulp.lpSum(
                 w_i[k][i, j] * x[i, j] for k in range(I) for i in range(M) for j in range(N)
@@ -51,6 +58,7 @@ class ScheduleOptimizationService(opt_pb2_grpc.ScheduleOptimizationServicer):
         objective = objective_pref + objective_w_i
         problem += objective
 
+        # Classroom constraints ensure the selected room set has no schedule overlap.
         for j in range(J):
             ww_sum = pulp.lpSum(ww_j[j][i, k] * x[i, k] for i in range(M) for k in range(N))
             problem += z[j] <= ww_sum

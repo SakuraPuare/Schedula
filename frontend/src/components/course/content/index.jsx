@@ -1,3 +1,8 @@
+/**
+ * Feature F23 - Student course selection orchestrator.
+ * Design intent: switch between plan browsing and class-level selection details while
+ * preserving the selected course context.
+ */
 import React, { useState } from 'react';
 import CourseContentPlan from './plan';
 import CourseContentClasser from './classer';

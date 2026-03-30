@@ -1,3 +1,8 @@
+"""
+Feature F12 - User data access abstraction.
+Design intent: separate persistence concerns from account lifecycle logic, making user lookup,
+creation, and feedback storage traceable and reusable.
+"""
 from __future__ import annotations
 
 from datetime import datetime

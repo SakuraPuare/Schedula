@@ -1,3 +1,8 @@
+/**
+ * Feature F19 - Unified frontend API client.
+ * Design intent: map each documented business capability to one explicit client method so
+ * the UI layer and the interface documentation stay one-to-one traceable.
+ */
 import axios from "axios";
 
 const normalizeBaseURL = (value) => (value.endsWith("/") ? value : `${value}/`);

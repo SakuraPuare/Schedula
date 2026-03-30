@@ -1,3 +1,8 @@
+"""
+Feature F06 - Administrative runtime control APIs.
+Design intent: keep business-window management isolated from teaching and learning logic so
+operational governance can evolve independently of the core course workflows.
+"""
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends

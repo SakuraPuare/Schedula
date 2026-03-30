@@ -1,3 +1,8 @@
+"""
+Feature F05 - Course domain API controller set.
+Design intent: gather course planning, enrollment, timetable, grading, and scheduling routes
+under one controller so the course lifecycle is externally visible as a coherent API surface.
+"""
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends

@@ -1,3 +1,8 @@
+"""
+Feature F11 - Verification mail delivery.
+Design intent: isolate SMTP delivery and verification-link generation so account activation is a
+traceable subsystem rather than scattered utility logic.
+"""
 from __future__ import annotations
 
 import smtplib
