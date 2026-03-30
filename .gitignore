@@ -7,3 +7,5 @@ backend/runtime/
 backend/sql/data/
 
 .DS_Store
+
+private-docs/
